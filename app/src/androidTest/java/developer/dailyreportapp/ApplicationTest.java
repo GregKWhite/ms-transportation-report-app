@@ -1,4 +1,4 @@
-package l337hax.swaglords.mstruckapp;
+package developer.dailyreportapp;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

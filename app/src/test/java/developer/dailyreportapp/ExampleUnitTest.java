@@ -1,4 +1,4 @@
-package l337hax.swaglords.mstruckapp;
+package developer.dailyreportapp;
 
 import org.junit.Test;
 
