@@ -20,8 +20,8 @@ public class Report {
         this.mileage = -1;
         this.gallons = -1;
         this.amountPaid = -1;
-        this.location = "NONE";
-        this.notes = "NONE";
+        this.location = "";
+        this.notes = "";
     }
 
     public Report(int driverID, int helperID, int truckNum, double mileage, double gallons, double amountPaid, String location, String notes) {
@@ -43,8 +43,11 @@ public class Report {
         this.driverID = driverID;
     }
 
-    public int getHelperID() {
-        return helperID;
+    public String getHelperID() {
+        if (helperID == -1)
+            return "";
+        else
+            return ""+ helperID;
     }
 
     public void setHelperID(int helperID) {
@@ -67,16 +70,23 @@ public class Report {
         this.mileage = mileage;
     }
 
-    public double getGallons() {
-        return gallons;
+    public String getGallons() {
+        if (gallons == -1)
+            return "";
+        else
+            return ""+ String.format("%.02f", gallons);
     }
 
     public void setGallons(double gallons) {
         this.gallons = gallons;
     }
 
-    public double getAmountPaid() {
-        return amountPaid;
+    public String getAmountPaid() {
+
+        if (amountPaid == -1)
+            return "";
+        else
+            return ""+ String.format("%.02f", amountPaid);
     }
 
     public void setAmountPaid(double amountPaid) {
@@ -91,7 +101,8 @@ public class Report {
         this.location = location;
     }
 
-    public String getNotes() {
+    public String getNotes()
+    {
         return notes;
     }
 
@@ -101,7 +112,17 @@ public class Report {
 
     public String toString()
     {
-        return "Driver ID: " + getDriverID() + " Helper ID: " + getHelperID();
+        return  "{report:{" +
+                "driver_id: '" + getDriverID() + "'," +
+                "helper_id: '" + getHelperID() + "'," +
+                "gallons: '" + getGallons() + "'," +
+                "amount_paid: '" + getAmountPaid() + "'," +
+                "notes: '" + getNotes() + "'," +
+                "mileage: '" + getMileage() + "'," +
+                "location: '" + getLocation() + "'" +
+                "}}";
+                //""Driver ID: " + getDriverID() + " Helper ID: " + getHelperID() + " Truck Number: " + getTruckNum() + " Mileage: " + getMileage() + " Gallons: " + getGallons();
+
     }
 
     public boolean isIncomplete()
