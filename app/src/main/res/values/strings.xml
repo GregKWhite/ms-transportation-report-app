@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">DailyReportApp</string>
+    <string-array name="locations">
+        <item>Jacksonville</item>
+        <item>New Orleans</item>
+        <item>Pensacola</item>
+        <item>Tampa</item>
+    </string-array>
 </resources>

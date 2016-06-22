@@ -47,7 +47,8 @@
         android:layout_below="@+id/timeView"
         android:layout_centerHorizontal="true"
         android:textStyle="bold|italic"
-        android:textColorHighlight="#eec8c8" />
+        android:textColorHighlight="#eec8c8"
+        android:textSize="30dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -62,7 +63,7 @@
         android:layout_alignParentBottom="false"
         android:layout_marginTop="10dp"
         android:layout_toLeftOf="@+id/center"
-        android:layout_marginRight="47dp" />
+        android:layout_marginRight="45dp" />
 
     <EditText
         android:imeOptions="actionDone"
@@ -76,7 +77,8 @@
         android:layout_alignParentTop="false"
         android:layout_toLeftOf="@+id/center"
         android:textAlignment="center"
-        android:background="#e4ecef" />
+        android:background="#e4ecef"
+        android:gravity="center" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -89,7 +91,7 @@
         android:textColor="#000000"
         android:layout_marginTop="10dp"
         android:layout_toRightOf="@+id/center"
-        android:layout_marginLeft="45dp" />
+        android:layout_marginLeft="42dp" />
 
     <EditText
         android:imeOptions="actionDone"
@@ -101,18 +103,19 @@
         android:layout_toRightOf="@+id/center"
         android:layout_below="@+id/helperView"
         android:textAlignment="center"
-        android:background="#e4ecef" />
+        android:background="#e4ecef"
+        android:gravity="center" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Truck"
+        android:text="Truck Number"
         android:id="@+id/textView"
         android:layout_below="@+id/driverBox"
         android:layout_toLeftOf="@+id/center"
         android:textColor="#000000"
-        android:layout_marginRight="60dp"
+        android:layout_marginRight="20dp"
         android:layout_marginTop="20dp" />
 
     <EditText
@@ -125,7 +128,8 @@
         android:layout_below="@+id/textView"
         android:layout_toLeftOf="@+id/center"
         android:textAlignment="center"
-        android:background="#e4ecef" />
+        android:background="#e4ecef"
+        android:gravity="center" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -137,7 +141,7 @@
         android:layout_toRightOf="@+id/center"
         android:layout_below="@+id/helperBox"
         android:layout_marginTop="20dp"
-        android:layout_marginLeft="51dp" />
+        android:layout_marginLeft="45dp" />
 
     <EditText
         android:imeOptions="actionDone"
@@ -149,7 +153,8 @@
         android:layout_below="@+id/mileageView"
         android:textAlignment="center"
         android:background="#e4ecef"
-        android:layout_toRightOf="@+id/center" />
+        android:layout_toRightOf="@+id/center"
+        android:gravity="center" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -173,19 +178,20 @@
         android:layout_below="@+id/gallonsView"
         android:layout_toLeftOf="@+id/center"
         android:textAlignment="center"
-        android:background="#e4ecef" />
+        android:background="#e4ecef"
+        android:gravity="center" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="$ Amount"
+        android:text="Money Paid"
         android:id="@+id/moneyView"
         android:textColor="#000000"
         android:layout_toRightOf="@+id/center"
         android:layout_below="@+id/mileageBox"
         android:layout_marginTop="20dp"
-        android:layout_marginLeft="42dp" />
+        android:layout_marginLeft="32dp" />
 
     <EditText
         android:imeOptions="actionDone"
@@ -197,7 +203,8 @@
         android:layout_below="@+id/moneyView"
         android:textAlignment="center"
         android:background="#e4ecef"
-        android:layout_toRightOf="@+id/center" />
+        android:layout_toRightOf="@+id/center"
+        android:gravity="center" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -211,17 +218,21 @@
         android:layout_marginRight="43dp"
         android:layout_marginTop="20dp" />
 
-    <EditText
-        android:imeOptions="actionDone"
+    <Spinner
         android:layout_width="wrap_content"
         android:layout_height="40dp"
-        android:ems="10"
         android:id="@+id/locationBox"
         android:layout_below="@+id/locationView"
         android:layout_toLeftOf="@+id/center"
-        android:textAlignment="center"
         android:background="#e4ecef"
-        android:inputType="text" />
+        android:layout_alignParentLeft="false"
+        android:layout_alignParentStart="false"
+        android:layout_alignParentBottom="false"
+        android:entries = "@array/locations"
+        android:layout_alignLeft="@+id/gallonsBox"
+        android:spinnerMode="dropdown"
+        android:textAlignment="center"
+        android:gravity="center" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -233,7 +244,7 @@
         android:layout_toRightOf="@+id/center"
         android:layout_below="@+id/moneyBox"
         android:layout_marginTop="20dp"
-        android:layout_marginLeft="35dp" />
+        android:layout_marginLeft="32dp" />
 
     <EditText
         android:imeOptions="actionDone"
@@ -248,16 +259,17 @@
         android:inputType="text" />
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="DEBUG TEXT"
         android:id="@+id/debugText"
         android:layout_above="@+id/submitButton"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="100dp"
+        android:layout_marginBottom="0dp"
         android:textSize="15dp"
-        android:textColor="#ff0000"
-        android:textStyle="bold|italic" />
+        android:textColor="#000000"
+        android:textStyle="bold|italic"
+        android:layout_toLeftOf="@+id/submitButton"
+        android:layout_marginRight="0dp" />
 
 </RelativeLayout>

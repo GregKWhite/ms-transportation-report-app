@@ -13,15 +13,11 @@ import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-/**
- * Created by Alberto on 6/16/2016.
- */
 
 
 
 public class ReportManager extends AsyncTask
 {
-
     @Override
     protected Object doInBackground(Object[] params) {
         try {
@@ -35,8 +31,7 @@ public class ReportManager extends AsyncTask
     }
 
     public void uploadToServer(String send) throws IOException, JSONException {
-        Log.d("test", "Made it this far");
-        String query = "http://requestb.in/xw7r7mxw";
+        String query = "http://requestb.in/1jergzc1";
         String json = send;
 
         URL url = new URL(query);
@@ -51,15 +46,11 @@ public class ReportManager extends AsyncTask
         os.write(json.getBytes("UTF-8"));
         os.close();
 
-        // read the response
         InputStream in = new BufferedInputStream(conn.getInputStream());
-        //String result = org.apache.commons.io.IOUtils.toString(in, "UTF-8");
-        JSONObject jsonObject = new JSONObject();
-
-
+        Log.d("test", ""+ conn.getResponseCode());
         in.close();
         conn.disconnect();
 
-        //return jsonObject;
+
     }
 }

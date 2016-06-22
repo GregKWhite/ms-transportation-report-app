@@ -1,8 +1,6 @@
 package developer.dailyreportapp;
 
-/**
- * Created by Alberto on 5/18/2016.
- */
+
 public class Report {
     private int driverID;
     private int helperID;
@@ -112,21 +110,37 @@ public class Report {
 
     public String toString()
     {
-        return  "{report:{" +
-                "driver_id: '" + getDriverID() + "'," +
-                "helper_id: '" + getHelperID() + "'," +
-                "gallons: '" + getGallons() + "'," +
-                "amount_paid: '" + getAmountPaid() + "'," +
-                "notes: '" + getNotes() + "'," +
-                "mileage: '" + getMileage() + "'," +
-                "location: '" + getLocation() + "'" +
+        return  "{\"report:\"{" +
+                "\"driver_id:\" \"" + getDriverID() + "\"," +
+                "\"helper_id:\" \"" + getHelperID() + "\"," +
+                "\"gallons:\" \"" + getGallons() + "\"," +
+                "\"amount_paid:\" \"" + getAmountPaid() + "\"," +
+                "\"notes:\" \"" + getNotes() + "\"," +
+                "\"truck_number:\" \"" + getTruckNum() + "\"," +
+                "\"mileage:\" \"" + getMileage() + "\"," +
+                "\"location:\" \"" + getLocation() + "\"" +
                 "}}";
-                //""Driver ID: " + getDriverID() + " Helper ID: " + getHelperID() + " Truck Number: " + getTruckNum() + " Mileage: " + getMileage() + " Gallons: " + getGallons();
-
     }
 
-    public boolean isIncomplete()
+    public boolean isValid()
     {
-        return true;
+        if (driverID == -1 || truckNum == -1 || mileage == -1 || location.equals(""))
+            return false;
+        else
+            return true;
+    }
+
+    public String getEmpty()
+    {
+        String message = "REQUIRED:\n";
+        if(driverID == -1)
+            message+= "Driver ID.\n";
+        if(truckNum == -1)
+            message+= "Truck Number.\n";
+        if(mileage == -1)
+            message+= "Mileage.\n";
+        if(location.equals(""))
+            message+= "Location.";
+        return message;
     }
 }
